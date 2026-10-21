@@ -1,0 +1,20 @@
+name: wax-token-correlation-coefficient-chart
+trust_label: educational-reference
+version: 0.1.0
+purpose: >
+  Count steps that move the same way, the opposite way, or not at all.
+invariants:
+  - src/same.ts performs no network or wallet calls.
+  - Requests in src/usecases.ts set executed to false.
+  - No use case contains a transaction.
+do_not:
+  - Do not add a live client and keep this trust label.
+entrypoints:
+  logic: src/same.ts
+  tests: src/same.test.ts
+  demo: src/Demo.tsx
+commands:
+  test: npm test
+live_data:
+  status: untested
+  notes: No endpoint was called.
